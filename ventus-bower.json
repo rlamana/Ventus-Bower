@@ -1,19 +1,16 @@
 {
   "name": "Ventus",
   "version": "0.2",
-  "homepage": "www.rlamana.es/ventus",
-  "authors": [
-    "Ramon Lamana <rlamana@gmail.com>"
-  ],
+  "repo": "rlamana/Ventus-Bower",
   "description": "A window manager written in Javascript, HTML5 and CSS3",
   "main": [
     "ventus.css",
     "ventus.js",
     "ventus.min.js"
   ],
-  "moduleType": [
-    "amd",
-    "globals"
+  "scripts": [
+    "ventus.js",
+    "ventus.min.js"
   ],
   "keywords": [
     "window",
@@ -24,11 +21,5 @@
     "javascript",
     "library"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/lamana/Ventus-Bower.git"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  "license": "MIT"
 }
