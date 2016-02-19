@@ -1,6 +1,6 @@
 {
   "name": "Ventus",
-  "version": "0.2",
+  "version": "0.2.1",
   "homepage": "www.rlamana.es/ventus",
   "authors": [
     "Ramon Lamana <rlamana@gmail.com>"
@@ -10,6 +10,9 @@
     "ventus.css",
     "ventus.js",
     "ventus.min.js"
+  ],
+  "ignore": [
+    "README.md"
   ],
   "moduleType": [
     "amd",
@@ -27,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lamana/Ventus-Bower.git"
+    "url": "git://github.com/rlamana/Ventus-Bower.git"
   },
   "dependencies": {},
   "devDependencies": {}

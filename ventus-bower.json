@@ -1,6 +1,6 @@
 {
   "name": "Ventus",
-  "version": "0.2",
+  "version": "0.2.1",
   "repo": "rlamana/Ventus-Bower",
   "description": "A window manager written in Javascript, HTML5 and CSS3",
   "main": [
@@ -11,6 +11,9 @@
   "scripts": [
     "ventus.js",
     "ventus.min.js"
+  ],
+  "ignore": [
+    "README.md"
   ],
   "keywords": [
     "window",

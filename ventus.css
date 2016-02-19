@@ -327,7 +327,7 @@
           user-select: none;
 }
 .wm-window.inactive header.wm-window-title {
-  background-color: #888888;
+  background-color: #888;
 }
 .wm-window.inactive header.wm-window-title h1 {
   color: #bbb;

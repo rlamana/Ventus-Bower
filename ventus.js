@@ -1,5 +1,5 @@
 /*!
- * Ventus 0.2
+ * Ventus 0.2.1
  * Copyright © 2015 Ramón Lamana
  * http://www.rlamana.com
  */
@@ -9,7 +9,7 @@
     } else { // Browser globals
         root.Ventus = factory(root.$);
     }
-}(this, function ($) {
+}(this, function (jQuery) {
 
     var requirejs, require, define;
 (function (undef) {
@@ -1147,6 +1147,12 @@ define('ventus/wm/window', [
     'ventus/tpl/window'
 ], function (Emitter, Promise, View, WindowTemplate) {
     'use strict';
+    function isTouchEvent(e) {
+        return !!window.TouchEvent && e.originalEvent instanceof window.TouchEvent;
+    }
+    function convertMoveEvent(e) {
+        return isTouchEvent(e) ? e.originalEvent.changedTouches[0] : e.originalEvent;
+    }
     var Window = function (options) {
         this.signals = new Emitter();
         options = options || {
@@ -1203,7 +1209,7 @@ define('ventus/wm/window', [
         _resizing: null,
         slots: {
             move: function (e) {
-                var isTouchEvent = e.originalEvent instanceof TouchEvent, event = isTouchEvent ? e.originalEvent.changedTouches[0] : e.originalEvent;
+                var event = convertMoveEvent(e);
                 if (!this.enabled || !this.movable) {
                     return;
                 }
@@ -1266,7 +1272,7 @@ define('ventus/wm/window', [
                     e.preventDefault();
                 },
                 'button.wm-resize mousedown': function (e) {
-                    var isTouchEvent = e.originalEvent instanceof TouchEvent, event = isTouchEvent ? e.originalEvent.changedTouches[0] : e.originalEvent;
+                    var event = convertMoveEvent(e);
                     if (!this.enabled || !this.resizable) {
                         return;
                     }
@@ -1280,8 +1286,8 @@ define('ventus/wm/window', [
             },
             space: {
                 'mousemove': function (e) {
-                    var isTouchEvent = e.originalEvent instanceof TouchEvent, event = isTouchEvent ? e.originalEvent.changedTouches[0] : e.originalEvent;
-                    if (!isTouchEvent && e.which !== 1) {
+                    var event = convertMoveEvent(e);
+                    if (!isTouchEvent(e) && e.which !== 1) {
                         this._moving && this._stopMove();
                         this._resizing && this._stopResize();
                     }
@@ -2511,7 +2517,7 @@ define('src/main', [
     // Register in the values from the outer closure for common dependencies
     // as local almond modules
     define('$', function () {
-        return $;
+        return jQuery;
     });
 
     define('underscore', function () {
