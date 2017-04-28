@@ -1,8 +1,12 @@
 {
   "name": "Ventus",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "repo": "rlamana/Ventus-Bower",
   "description": "A window manager written in Javascript, HTML5 and CSS3",
+  "homepage": "http://rlamana.com/ventus",
+  "authors": [
+    { "name": "Ramon Lamana", "email": "rlamana@gmail.com", "homepage": "http://rlamana.com" }
+  ],
   "main": [
     "ventus.css",
     "ventus.js",
