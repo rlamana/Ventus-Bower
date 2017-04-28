@@ -1,5 +1,5 @@
 /*!
- * Ventus 0.2.1
+ * Ventus 0.2.2
  * Copyright © 2015 Ramón Lamana
  * http://www.rlamana.com
  */
